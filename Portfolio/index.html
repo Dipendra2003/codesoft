@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="img/dip new.jpg" alt="Diptech" class="logo-img">
+                <span class="logo-text">Diptech</span>
+            </div>
+            <div class="nav-container">
+                <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active">
+                        <i class="fas fa-house"></i> Home
+                    </a></li>
+                    <li><a href="#about" class="nav-link">
+                        <i class="fas fa-user"></i> About
+                    </a></li>
+                    <li><a href="#skills" class="nav-link">
+                        <i class="fas fa-code"></i> Skills
+                    </a></li>
+                    <li><a href="#projects" class="nav-link">
+                        <i class="fas fa-laptop-code"></i> Projects
+                    </a></li>
+                    <li><a href="#contact" class="nav-link">
+                        <i class="fas fa-envelope"></i> Contact
+                    </a></li>
+                </ul>
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="hero-content">
+            <h1 class="glitch-text">Hi, I'm <span class="highlight">Dipendra Kumar</span></h1>
+            <div class="typing-text">
+                <span class="typed"></span>
+            </div>
+            <p class="hero-description">Transforming ideas into digital reality through clean and efficient code</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">
+                    <span>View My Work</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <span>Let's Connect</span>
+                    <i class="fas fa-handshake"></i>
+                </a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="image-container">
+                <img src="img/dip new.jpg" alt="Developer Illustration">
+                <div class="image-overlay"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <img src="img/dip new.jpg" alt="Your Photo">
+            <div class="bio">
+                <p>Hello! I'm a passionate web developer with expertise in creating modern and responsive websites.</p>
+                <a href="resume.pdf" class="download-btn" download>Download Resume</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">My Skills</h2>
+        <div class="skills-container">
+            <div class="skills-category">
+                <h3>Frontend Development</h3>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <i class="fab fa-html5"></i>
+                        <h4>HTML5</h4>
+                        <div class="progress-bar">
+                            <div class="progress progress-95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fab fa-css3-alt"></i>
+                        <h4>CSS3</h4>
+                        <div class="progress-bar">
+                            <div class="progress progress-90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fab fa-js"></i>
+                        <h4>JavaScript</h4>
+                        <div class="progress-bar">
+                            <div class="progress progress-85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fab fa-react"></i>
+                        <h4>React</h4>
+                        <div class="progress-bar">
+                            <div class="progress progress-80"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">
+                <span class="highlight">Featured</span> Projects
+            </h2>
+            
+            <div class="project-filters" data-aos="fade-up" data-aos-delay="100">
+                <button class="filter-btn active" data-filter="all">
+                    <span class="btn-text">All</span>
+                </button>
+                <button class="filter-btn" data-filter="web">
+                    <i class="fas fa-globe"></i>
+                    <span class="btn-text">Web Apps</span>
+                </button>
+                <button class="filter-btn" data-filter="mobile">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span class="btn-text">Mobile Apps</span>
+                </button>
+                <button class="filter-btn" data-filter="design">
+                    <i class="fas fa-paint-brush"></i>
+                    <span class="btn-text">Design</span>
+                </button>
+            </div>
+
+            <div class="project-grid" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <img src="img/download.jpg" alt="EventHub Project" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" title="Visit Project">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span class="tooltip">Live Demo</span>
+                                </a>
+                                <a href="#" class="project-github" title="View Source Code">
+                                    <i class="fab fa-github"></i>
+                                    <span class="tooltip">Source Code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>EventHub</h3>
+                        <p class="project-description">A modern event management system with real-time updates and interactive features.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">
+                Let's <span class="highlight">Connect</span>
+            </h2>
+            <div class="contact-container">
+                <div class="contact-info" data-aos="fade-right" data-aos-delay="100">
+                    <div class="contact-card">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Ambala Haryana, India</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <a href="mailto:contact@example.com" class="contact-link">contact@example.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <a href="tel:+917644868038" class="contact-link">+91 7644868038</a>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="contact-form" class="contact-form" data-aos="fade-left" data-aos-delay="200">
+                    <div class="form-group floating">
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name"
+                            required 
+                            autocomplete="name"
+                            placeholder=" "
+                        >
+                        <label for="name">
+                            <i class="fas fa-user"></i>
+                            Your Name
+                        </label>
+                        <div class="form-line"></div>
+                    </div>
+
+                    <div class="form-group floating">
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email"
+                            required 
+                            autocomplete="email"
+                            placeholder=" "
+                        >
+                        <label for="email">
+                            <i class="fas fa-envelope"></i>
+                            Your Email
+                        </label>
+                        <div class="form-line"></div>
+                    </div>
+
+                    <div class="form-group floating">
+                        <textarea 
+                            id="message" 
+                            name="message"
+                            required 
+                            placeholder=" " 
+                            rows="5"
+                        ></textarea>
+                        <label for="message">
+                            <i class="fas fa-comment-alt"></i>
+                            Your Message
+                        </label>
+                        <div class="form-line"></div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-send">
+                        <div class="button-content">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </div>
+                        <div class="button-loader">
+                            <div class="spinner"></div>
+                        </div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="footer-logo">
+                    <img src="img/dip new.jpg" alt="Diptech Logo">
+                    <h3>Diptech</h3>
+                </div>
+                <p>Creating digital experiences that matter</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="social-links">
+                <h4>Connect With Me</h4>
+                <div class="social-icons">
+                    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Diptech. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+</html>

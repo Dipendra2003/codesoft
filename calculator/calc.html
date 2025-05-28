@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Modern Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="calculator">
+        <div class="display">
+            <div class="scientific-mini">
+                
+            </div>
+            <div id="expression" class="expression">0</div>
+            <div class="result">
+                <span class="equals">=</span>
+                <span id="result" class="value">0</span>
+            </div>
+        </div>
+
+        <div class="keypad">
+            <div class="row">
+                <button class="function" data-function="sin">sin</button>
+                <button class="function" data-function="cos">cos</button>
+                <button class="function" data-function="tan">tan</button>
+                <button class="function" data-function="log">log</button>
+            </div>
+            <div class="row">
+                <button class="special" data-action="clear">AC</button>
+                <button class="special" data-action="backspace">
+                    <span class="material-icons">backspace</span>
+                </button>
+                <button class="number" data-number="3.14159">π</button>
+                <button class="operator" data-operator="÷">÷</button>
+            </div>
+            <div class="row">
+                <button class="number" data-number="7">7</button>
+                <button class="number" data-number="8">8</button>
+                <button class="number" data-number="9">9</button>
+                <button class="operator" data-operator="×">×</button>
+            </div>
+            <div class="row">
+                <button class="number" data-number="4">4</button>
+                <button class="number" data-number="5">5</button>
+                <button class="number" data-number="6">6</button>
+                <button class="operator" data-operator="−">−</button>
+            </div>
+            <div class="row">
+                <button class="number" data-number="1">1</button>
+                <button class="number" data-number="2">2</button>
+                <button class="number" data-number="3">3</button>
+                <button class="operator" data-operator="+">+</button>
+            </div>
+            <div class="row">
+                <button class="number" data-number="0">0</button>
+                <button class="number" data-decimal=".">.</button>
+                <button class="operator" data-bracket="()">()</button>
+                <button class="operator equal" data-action="calculate">=</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feature Panels -->
+    <div class="feature-panels">
+        <div id="history-panel" class="panel">
+            <div class="panel-header">
+                <h3>History</h3>
+                <button class="close-panel"><span class="material-icons">close</span></button>
+            </div>
+            <div id="history" class="history-container"></div>
+        </div>
+
+        <div id="converter-panel" class="panel">
+            <div class="panel-header">
+                <h3>Converters</h3>
+                <button class="close-panel"><span class="material-icons">close</span></button>
+            </div>
+            <div class="converter-tabs">
+                <button class="tab active" data-converter="length">Length</button>
+                <button class="tab" data-converter="temperature">Temperature</button>
+                <button class="tab" data-converter="currency">Currency</button>
+            </div>
+            <div class="converter-content">
+                <div class="converter-section" data-section="length">
+                    <div class="converter-inputs">
+                        <div class="input-group">
+                            <label for="length-from" class="sr-only">Enter length value</label>
+                            <input type="number" id="length-from" class="converter-input" aria-label="Enter length value" placeholder="Enter value">
+                            <select id="length-from-unit" aria-label="Select length unit to convert from">
+                                <option value="km">Kilometers</option>
+                                <option value="m">Meters</option>
+                                <option value="mi">Miles</option>
+                                <option value="ft">Feet</option>
+                            </select>
+                        </div>
+                        <span class="material-icons">swap_vert</span>
+                        <div class="input-group">
+                            <label for="length-to" class="sr-only">Converted length value</label>
+                            <input type="number" id="length-to" class="converter-input" readonly aria-label="Converted length value" placeholder="Result">
+                            <select id="length-to-unit" aria-label="Select length unit to convert to">
+                                <option value="mi">Miles</option>
+                                <option value="km">Kilometers</option>
+                                <option value="m">Meters</option>
+                                <option value="ft">Feet</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="convert-btn">Convert</button>
+                </div>
+
+                <div class="converter-section hidden" data-section="temperature">
+                    <div class="converter-inputs">
+                        <div class="input-group">
+                            <label for="temp-from" class="sr-only">Enter temperature value</label>
+                            <input type="number" id="temp-from" class="converter-input" aria-label="Enter temperature value" placeholder="Enter value">
+                            <select id="temp-from-unit" aria-label="Select temperature unit to convert from">
+                                <option value="c">Celsius</option>
+                                <option value="f">Fahrenheit</option>
+                                <option value="k">Kelvin</option>
+                            </select>
+                        </div>
+                        <span class="material-icons">swap_vert</span>
+                        <div class="input-group">
+                            <label for="temp-to" class="sr-only">Converted temperature value</label>
+                            <input type="number" id="temp-to" class="converter-input" readonly aria-label="Converted temperature value" placeholder="Result">
+                            <select id="temp-to-unit" aria-label="Select temperature unit to convert to">
+                                <option value="f">Fahrenheit</option>
+                                <option value="c">Celsius</option>
+                                <option value="k">Kelvin</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="convert-btn">Convert</button>
+                </div>
+
+                <div class="converter-section hidden" data-section="currency">
+                    <div class="converter-inputs">
+                        <div class="input-group">
+                            <label for="currency-from" class="sr-only">Enter amount</label>
+                            <input type="number" id="currency-from" class="converter-input" placeholder="Enter amount">
+                            <select id="currency-from-unit" aria-label="Select currency to convert from">
+                                <option value="USD">USD</option>
+                                <option value="EUR">EUR</option>
+                                <option value="GBP">GBP</option>
+                                <option value="JPY">JPY</option>
+                                <option value="INR">INR</option>
+                                <option value="CNY">CNY</option>
+                            </select>
+                        </div>
+                        <span class="material-icons">swap_vert</span>
+                        <div class="input-group">
+                            <label for="currency-to" class="sr-only">Converted amount</label>
+                            <input type="number" id="currency-to" class="converter-input" readonly placeholder="Result">
+                            <select id="currency-to-unit" aria-label="Select currency to convert to">
+                                <option value="EUR">EUR</option>
+                                <option value="USD">USD</option>
+                                <option value="GBP">GBP</option>
+                                <option value="JPY">JPY</option>
+                                <option value="INR">INR</option>
+                                <option value="CNY">CNY</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="convert-btn">Convert</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="tools-panel" class="panel">
+            <div class="panel-header">
+                <h3>Tools</h3>
+                <button class="close-panel"><span class="material-icons">close</span></button>
+            </div>
+            <div class="tools-grid">
+                <button class="tool-item" data-tool="matrix">
+                    <span class="material-icons">grid_on</span>
+                    <span>Matrix</span>
+                </button>
+                <button class="tool-item" data-tool="interest">
+                    <span class="material-icons">account_balance</span>
+                    <span>Interest</span>
+                </button>
+                <button class="tool-item" data-tool="age">
+                    <span class="material-icons">event</span>
+                    <span>Age</span>
+                </button>
+                <button class="tool-item" data-tool="bmi">
+                    <span class="material-icons">monitor_weight</span>
+                    <span>BMI</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <button class="nav-item active" data-view="calculator">
+            <span class="material-icons">calculate</span>
+            <span class="nav-label">Calc</span>
+        </button>
+        <button class="nav-item" data-view="history">
+            <span class="material-icons">history</span>
+            <span class="nav-label">History</span>
+        </button>
+        <button class="nav-item" data-view="converter">
+            <span class="material-icons">swap_horiz</span>
+            <span class="nav-label">Convert</span>
+        </button>
+        <button class="nav-item" data-view="tools">
+            <span class="material-icons">more_horiz</span>
+            <span class="nav-label">More</span>
+        </button>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>
